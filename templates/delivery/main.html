@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_html_head %}
+<style>
+    #app {
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        margin: auto;
+        width: 95% !important;
+        padding: 0;
+    }
+</style>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+<link rel="stylesheet" href="//cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css">
+{% endblock %}
+{% block out_container_body %}
+<input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+<div id="app">
+    <!--
+    <div class="row">
+        <div class="col"><button class="btn btn-primary" v-on:click="showModal()">Новый заказ</button></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+            <ul>
+                <li v-for="(tab,index) in tabs" v-on:click="tab_number=index" ><a href="#">[[tab.name]]</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-10">
+            <new-order-modal modal-id="create-modal" ></new-order-modal>
+            <component v-bind:is="'tab-'+tab.value"></component>
+        </div>
+    </div>
+    -->
+</div>
+<div id="buffer-tag"></div>
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/build.js' %}"></script>
+{% endblock %}
